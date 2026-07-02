@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture | Irie Trading Bot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header>
+      <div class="top-strip">
+        <a class="logo-tile" href="index.html">Irie<span>home base</span></a>
+        <button class="top-ad" type="button" data-ad data-label="ARCHITECTURE MAP LOADED"></button>
+        <button class="top-ad" type="button" data-ad data-label="MODULES ONLINE"></button>
+      </div>
+    </header>
+    <main class="detail-layout">
+      <article class="article-panel">
+        <section class="hero topic-hero">
+          <div class="hero-grid"></div>
+          <div class="hero-art"></div>
+          <div class="hero-copy">
+            <span class="hero-kicker">system blueprint</span>
+            <h1>Architecture</h1>
+            <p>The bot is built as a set of focused modules: configuration, data, strategy generation, signal resolution, risk, execution, monitoring, and backtesting.</p>
+            <div class="hero-buttons"><a class="button" href="index.html#architecture">back to card</a><button class="button" type="button" data-theme-toggle>toggle theme</button></div>
+          </div>
+          <div class="topic-art"><span class="card-image" data-art="architecture"><img src="images/IBM_System360_Model_30.jpg" alt="Vintage IBM System/360 computer installation" loading="lazy" /><span class="image-badge">mainframe map</span></span></div>
+        </section>
+        <div class="window-title"><span>architecture breakdown</span><span>v2.0</span></div>
+        <div class="article-body">
+          <p>The design separates decisions from side effects. Strategy code can propose signals, risk code can size or reject them, and execution code can translate approved intent into broker orders.</p>
+          <table class="info-table">
+            <tr><th>Layer</th><th>Responsibility</th></tr>
+            <tr><td><code>config/</code></td><td>YAML settings, environment switches, symbol lists, risk limits, broker mode, and notification toggles.</td></tr>
+            <tr><td><code>data/</code></td><td>Market data fetching, Parquet cache management, provider abstraction, and rate-limit behavior.</td></tr>
+            <tr><td><code>strategies/</code></td><td>Independent strategy classes that calculate indicators and return normalized buy, sell, short, cover, or hold signals.</td></tr>
+            <tr><td><code>live/engine.py</code></td><td>The orchestration loop that fetches data, runs strategies, resolves signals, checks risk, places orders, and reports state.</td></tr>
+            <tr><td><code>execution/</code></td><td>Broker adapters, IBKR connectivity, paper/live modes, and order construction.</td></tr>
+            <tr><td><code>risk/</code></td><td>Position sizing, exposure caps, heat checks, drawdown behavior, daily loss limits, and ATR stop logic.</td></tr>
+            <tr><td><code>monitoring/</code></td><td>Discord, Telegram, health checks, and dashboard-facing status.</td></tr>
+            <tr><td><code>backtest/</code></td><td>Historical simulation and performance analysis before a strategy reaches live operation.</td></tr>
+          </table>
+          <h2>Control Flow</h2>
+          <div class="code-window"><pre>data bars -> strategy signals -> resolver intent -> risk approval -> broker order -> notification -> dashboard state</pre></div>
+          <p>This keeps failures contained. A data provider outage should not rewrite strategy rules; a broker adapter change should not alter risk math; a notification failure should not stop portfolio accounting.</p>
+        </div>
+      </article>
+      <aside>
+        <section class="box"><div class="box-title">quick nav</div><div class="box-body social-grid"><a href="strategies.html">Strategies</a><a href="signal-resolver.html">Signal Resolver</a><a href="risk-management.html">Risk Management</a><a href="deployment.html">Deployment</a></div></section>
+        <section class="box"><div class="box-title">bot sponsor</div><div class="box-body"><button class="ad-unit bot-ad" type="button" data-ad><span class="ad-pixel robot"></span>Draw your bot map<small>interactive prop</small></button></div></section>
+      </aside>
+    </main>
+    <footer class="footer"><div class="footer-icons" aria-label="retro footer badges"><a class="footer-icon" href="index.html">HOME</a><a class="footer-icon" href="architecture.html">SYS MAP</a><a class="footer-icon" href="risk-management.html">RISK</a><a class="footer-icon" href="dashboard.html">LIVE</a><a class="footer-icon" href="deployment.html">VPS</a></div><a href="index.html">home</a> | <a href="https://github.com/Native-254/trading-bot" target="_blank" rel="noreferrer">GitHub</a><br />visitor count: <span class="counter" data-counter>000128</span></footer>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>

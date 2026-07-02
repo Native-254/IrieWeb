@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irie Trading Bot |  Docs</title>
+  <meta name="description" content="A responsive early-2000s retro documentation site for the Irie Trading Bot." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to bot sections</a>
+
+  <div class="float-icon disk" style="top: 12%; left: 3%; animation-duration: 11s;"></div>
+  <div class="float-icon chip" style="top: 28%; right: 5%; animation-duration: 14s;"></div>
+  <div class="float-icon cursor" style="bottom: 18%; left: 8%; animation-duration: 9s;"></div>
+
+  <div class="site-shell">
+    <header>
+      <div class="top-strip">
+        <div class="logo-tile">IRIE<span>bot docs 2.0</span></div>
+        <button class="top-ad" type="button" data-ad data-label="HOT: BOT SIGNALS, PAPER MODE, MARKET DATA"></button>
+        <button class="top-ad" type="button" data-ad data-label="FREE TICKER WALLPAPER PACK"></button>
+      </div>
+      <div class="marquee-bar" aria-label="site updates">
+        <div class="marquee-track">
+          <span>Welcome to Irie Trading Bot </span>
+          <span>multi-strategy engine</span>
+          <span>IBKR execution</span>
+          <span>risk-first automation</span>
+          <span>paper/live switchboard</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="side-rail" aria-label="section navigation">
+        <section class="box">
+          <div class="box-title">getting around</div>
+          <div class="box-body">
+            <nav>
+              <ul class="toc-list">
+                <li><a class="toc-link" href="#architecture">Architecture <small>card</small></a></li>
+                <li><a class="toc-link" href="#strategies">Strategies <small>card</small></a></li>
+                <li><a class="toc-link" href="#signal-resolver">Signal resolver <small>card</small></a></li>
+                <li><a class="toc-link" href="#risk-management">Risk controls <small>card</small></a></li>
+                <li><a class="toc-link" href="#data-pipeline">Data pipeline <small>card</small></a></li>
+                <li><a class="toc-link" href="#execution">Execution <small>card</small></a></li>
+                <li><a class="toc-link" href="#notifications">Notifications <small>card</small></a></li>
+                <li><a class="toc-link" href="#backtesting">Backtesting <small>card</small></a></li>
+                <li><a class="toc-link" href="#dashboard">Dashboard <small>card</small></a></li>
+                <li><a class="toc-link" href="#deployment">Deployment <small>card</small></a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+
+        <section class="box">
+          <div class="box-title">theme</div>
+          <div class="box-body">
+            <button class="theme-toggle" type="button" data-theme-toggle>toggle retro mode</button>
+          </div>
+        </section>
+
+        <section class="box">
+          <div class="box-title">bot sponsors</div>
+          <div class="box-body ad-stack">
+            <button class="ad-unit market-ad" type="button" data-ad>
+              <span class="ad-pixel ticker"></span>
+              NYSE signal arcade
+              <small>quotes simulated</small>
+            </button>
+            <button class="ad-unit alert-ad" type="button" data-ad>
+              <span class="ad-pixel warning"></span>
+              Risk limit alert pack
+              <small>blinks responsibly</small>
+            </button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="content" id="main">
+        <section class="hero home-hero" aria-labelledby="page-title">
+          <div class="hero-grid"></div>
+          <div class="hero-art"></div>
+          <div class="hero-copy">
+            <span class="hero-kicker">best viewed in 800x600, still works on phones</span>
+            <h1 id="page-title">Irie Trading Bot</h1>
+            <p>A retro operator manual for a modular automated trading system: strategies, signal resolution, risk, execution, dashboards, alerts, testing, and deployment.</p>
+            <div class="hero-buttons">
+              <a class="button" href="architecture.html">Architecture</a>
+              <a class="button" href="strategies.html">Strategies</a>
+              <a class="button" href="risk-management.html">Risk</a>
+              <a class="button" href="deployment.html">Deployment</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-window" aria-labelledby="snapshot-title">
+          <div class="window-title"><span id="snapshot-title">system snapshot</span><span>ONLINE</span></div>
+          <div class="intro-grid">
+            <div class="stat-box"><strong>10</strong> documentation portals with full breakdown pages.</div>
+            <div class="stat-box"><strong>2</strong> cable-TV and pale portal directory.</div>
+            <div class="stat-box"><strong>0</strong>  ads</div>
+          </div>
+        </section>
+
+        <section class="section-window" aria-labelledby="cards-title">
+          <div class="window-title"><span id="cards-title">bot modules</span><span>click cards to expand</span></div>
+          <div class="card-grid">
+            <article class="retro-card" id="architecture">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="architecture"><img src="images/IBM_System360_Model_30.jpg" alt="Vintage IBM System/360 computer installation" loading="lazy" /><span class="image-badge">mainframe map</span></span>
+                <span class="card-label"><strong>Modular Architecture</strong><span>Config, data, strategies, live engine, execution, risk, monitoring, and backtest modules.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The bot is arranged as independent services connected by clear contracts, so each layer can be swapped, tested, or extended without rewriting the whole system.</p>
+                <div class="card-actions"><a class="button" href="architecture.html">open architecture page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="strategies">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="strategies"><img src="images/Bloomberg_Terminal_Museum.jpg" alt="Bloomberg terminal with market screens and keyboard" loading="lazy" /><span class="image-badge">strategy screen</span></span>
+                <span class="card-label"><strong>Multi-Strategy Engine</strong><span>Trend following, mean reversion, and planned breakout logic share one signal language.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>Strategies calculate their own indicators and return normalized signals, allowing the resolver to decide how the portfolio should act.</p>
+                <div class="card-actions"><a class="button" href="strategies.html">open strategies page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="signal-resolver">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="signal-resolver"><img src="images/Bloomberg_terminal_keyboard.jpg" alt="Early 2000s Bloomberg terminal keyboard" loading="lazy" /><span class="image-badge">signal keys</span></span>
+                <span class="card-label"><strong>Signal Resolver</strong><span>Merges competing strategy votes and blocks unsafe position transitions.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The resolver prevents duplicate entries, closes before reversing, and avoids naked shorting by respecting current holdings before issuing orders.</p>
+                <div class="card-actions"><a class="button" href="signal-resolver.html">open resolver page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="risk-management">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="risk-management"><img src="images/Chicago.Mercantile.Exchange.jpg" alt="Chicago Mercantile Exchange buildings at dusk" loading="lazy" /><span class="image-badge">risk tower</span></span>
+                <span class="card-label"><strong>Risk Management</strong><span>Kelly sizing, portfolio heat, exposure limits, daily loss guards, drawdown controls, and ATR stops.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>Risk is treated as the operating system: every trade must pass position sizing, exposure, loss-limit, and stop-placement checks.</p>
+                <div class="card-actions"><a class="button" href="risk-management.html">open risk page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="data-pipeline">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="data-pipeline"><img src="images/DM_IBM_S360.jpg" alt="IBM System/360 computer and operator console" loading="lazy" /><span class="image-badge">data room</span></span>
+                <span class="card-label"><strong>Data Pipeline</strong><span>Fetching, caching, rate limiting, and provider abstraction for new data sources.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The pipeline fetches market bars, caches reusable data, protects provider limits, and keeps the rest of the bot independent from source-specific quirks.</p>
+                <div class="card-actions"><a class="button" href="data-pipeline.html">open data page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="execution">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="execution"><img src="images/Bloomberg_terminal_keyboard.jpg" alt="Financial terminal keyboard used for trading commands" loading="lazy" /><span class="image-badge">order keys</span></span>
+                <span class="card-label"><strong>Execution</strong><span>IBKR integration, paper/live modes, market orders, bracket orders, and broker adapters.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The execution layer translates approved portfolio intent into broker-ready orders while preserving a paper-mode safety lane.</p>
+                <div class="card-actions"><a class="button" href="execution.html">open execution page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="notifications">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="notifications"><img src="images/Motorolaradiobeeper.jpg" alt="Vintage Motorola radio pager" loading="lazy" /><span class="image-badge">pager ping</span></span>
+                <span class="card-label"><strong>Notifications</strong><span>Discord webhooks and Telegram bots for trade, error, and status updates.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>Alerts keep the operator informed when trades fire, safeguards trip, connectivity changes, or background services need attention.</p>
+                <div class="card-actions"><a class="button" href="notifications.html">open alerts page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="backtesting">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="backtesting"><img src="images/360-91-panel.jpg" alt="IBM System/360 Model 91 operator panel" loading="lazy" /><span class="image-badge">history lab</span></span>
+                <span class="card-label"><strong>Backtesting</strong><span>Historical validation, performance metrics, and a path toward multi-strategy simulation.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The backtesting engine measures strategy behavior before live deployment, highlighting returns, drawdown, win rate, Sharpe, and trade quality.</p>
+                <div class="card-actions"><a class="button" href="backtesting.html">open backtesting page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="dashboard">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="dashboard"><img src="images/Bloomberg_Terminal_Museum.jpg" alt="Bloomberg terminal dashboard screens" loading="lazy" /><span class="image-badge">live console</span></span>
+                <span class="card-label"><strong>FastAPI Dashboard</strong><span>Local browser views for positions, equity, health, signals, and live bot state.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>The dashboard exposes operational endpoints and human-readable views for monitoring the bot without tailing logs all day.</p>
+                <div class="card-actions"><a class="button" href="dashboard.html">open dashboard page</a></div>
+              </div>
+            </article>
+
+            <article class="retro-card" id="deployment">
+              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
+                <span class="card-image" data-art="deployment"><img src="images/IBM360-65-1.corestore.jpg" alt="IBM System/360 Model 65 operator console" loading="lazy" /><span class="image-badge">server rack</span></span>
+                <span class="card-label"><strong>Deployment</strong><span>Oracle Cloud VPS, Docker, systemd, secrets, networking, and server hardening.</span></span>
+              </button>
+              <div class="card-detail">
+                <p>Deployment turns the bot into a managed service with predictable startup, logs, environment files, firewall rules, and recovery behavior.</p>
+                <div class="card-actions"><a class="button" href="deployment.html">open deployment page</a></div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <aside class="right-rail" aria-label="ads and project links">
+        <section class="box">
+          <div class="box-title">finance bot ads</div>
+          <div class="box-body ad-stack">
+            <button class="ad-unit market-ad" type="button" data-ad>
+              <span class="ad-pixel ticker"></span>
+              Signal blender 3000
+              <small>BUY SELL HOLD</small>
+            </button>
+            <button class="ad-unit bot-ad" type="button" data-ad>
+              <span class="ad-pixel robot"></span>
+              Paper trading cafe
+              <small>latte not included</small>
+            </button>
+            <button class="ad-unit alert-ad" type="button" data-ad>
+              <span class="ad-pixel warning"></span>
+              ATR stop-o-matic
+              <small>demo only</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="box">
+          <div class="box-title">project links</div>
+          <div class="box-body social-grid">
+            <a href="https://github.com/Native-254/trading-bot" target="_blank" rel="noreferrer">GitHub project</a>
+            <a href="https://www.linkedin.com/in/munene-howell-146163202/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://x.com/howie2541" target="_blank" rel="noreferrer">X / Twitter</a>
+          </div>
+        </section>
+
+        <section class="box">
+          <div class="box-title">site search</div>
+          <div class="box-body">
+            <form class="site-search" data-site-search>
+              <label for="site-search">Search for:</label>
+              <input id="site-search" type="search" value="risk manager" autocomplete="off" />
+              <button class="plain-button" type="submit">Yahoo-style Search</button>
+              <div class="search-results" data-search-results aria-live="polite"></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="box">
+          <div class="box-title">local directory</div>
+          <div class="box-body directory-grid">
+            <a href="architecture.html">Architecture</a>
+            <a href="strategies.html">Strategies</a>
+            <a href="signal-resolver.html">Resolver</a>
+            <a href="risk-management.html">Risk</a>
+            <a href="data-pipeline.html">Data</a>
+            <a href="execution.html">Execution</a>
+            <a href="notifications.html">Alerts</a>
+            <a href="backtesting.html">Backtests</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="deployment.html">Deploy</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-icons" aria-label="retro footer badges">
+        <a class="footer-icon" href="index.html">HOME</a>
+        <a class="footer-icon" href="architecture.html">SYS MAP</a>
+        <a class="footer-icon" href="risk-management.html">RISK</a>
+        <a class="footer-icon" href="dashboard.html">LIVE</a>
+        <a class="footer-icon" href="deployment.html">VPS</a>
+      </div>
+      <a href="index.html">home</a> |
+      <a href="architecture.html">architecture</a> |
+      <a href="strategies.html">strategies</a> |
+      <a href="deployment.html">deployment</a>
+      <br />
+      Irie Trading Bot retro documentation. Best viewed anywhere now.
+      <br />
+      visitor count: <span class="counter" data-counter>000128</span>
+    </footer>
+  </div>
+
+  <script src="site.js"></script>
+</body>
+</html>
