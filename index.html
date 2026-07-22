@@ -1,312 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irie Trading Bot |  Docs</title>
-  <meta name="description" content="A responsive early-2000s retro documentation site for the Irie Trading Bot." />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Vercel Web Analytics -->
-  <script>
-    window.va = window.va || function () {
-      (window.vaq = window.vaq || []).push(arguments);
-    };
-  </script>
-  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRIE — Automated NYSE Trading Bot</title>
+<meta name="description" content="IrieTrade: a fully automated, risk-managed trading bot for the NYSE. Multi-strategy engine, hard risk limits, zero emotional overrides.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to bot sections</a>
 
-  <div class="float-icon disk" style="top: 12%; left: 3%; animation-duration: 11s;"></div>
-  <div class="float-icon chip" style="top: 28%; right: 5%; animation-duration: 14s;"></div>
-  <div class="float-icon cursor" style="bottom: 18%; left: 8%; animation-duration: 9s;"></div>
+<div class="grain-overlay" aria-hidden="true"></div>
 
-  <div class="site-shell">
-    <header>
-      <div class="top-strip">
-        <div class="logo-tile">IRIE<span>bot docs 2.0</span></div>
-        <button class="top-ad" type="button" data-ad data-label="HOT: BOT SIGNALS, PAPER MODE, MARKET DATA"></button>
-        <button class="top-ad" type="button" data-ad data-label="FREE TICKER WALLPAPER PACK"></button>
-      </div>
-      <div class="marquee-bar" aria-label="site updates">
-        <div class="marquee-track">
-          <span>Welcome to Irie Trading Bot </span>
-          <span>multi-strategy engine</span>
-          <span>IBKR execution</span>
-          <span>risk-first automation</span>
-          <span>paper/live switchboard</span>
-        </div>
-      </div>
-    </header>
+<!-- NAV -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="IrieTrade home">
+      <span class="logo-badge">IT</span>
+      <span class="logo-word" data-text="IRIE">IRIE</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#machine"><span>01</span>Machine</a>
+      <a href="#strategy"><span>02</span>Strategy</a>
+      <a href="#risk"><span>03</span>Risk</a>
+      <a href="#rulebook"><span>04</span>Rulebook</a>
+      <a href="#alerts"><span>05</span>Alerts</a>
+      <a href="#contact"><span>06</span>Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/Native-254/IrieTrade" target="_blank" rel="noopener">
+      Source ↗
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <div class="layout">
-      <aside class="side-rail" aria-label="section navigation">
-        <section class="box">
-          <div class="box-title">getting around</div>
-          <div class="box-body">
-            <nav>
-              <ul class="toc-list">
-                <li><a class="toc-link" href="#architecture">Architecture <small>card</small></a></li>
-                <li><a class="toc-link" href="#strategies">Strategies <small>card</small></a></li>
-                <li><a class="toc-link" href="#signal-resolver">Signal resolver <small>card</small></a></li>
-                <li><a class="toc-link" href="#risk-management">Risk controls <small>card</small></a></li>
-                <li><a class="toc-link" href="#data-pipeline">Data pipeline <small>card</small></a></li>
-                <li><a class="toc-link" href="#execution">Execution <small>card</small></a></li>
-                <li><a class="toc-link" href="#notifications">Notifications <small>card</small></a></li>
-                <li><a class="toc-link" href="#backtesting">Backtesting <small>card</small></a></li>
-                <li><a class="toc-link" href="#dashboard">Dashboard <small>card</small></a></li>
-                <li><a class="toc-link" href="#deployment">Deployment <small>card</small></a></li>
-              </ul>
-            </nav>
-          </div>
-        </section>
-
-        <section class="box">
-          <div class="box-title">theme</div>
-          <div class="box-body">
-            <button class="theme-toggle" type="button" data-theme-toggle>toggle retro mode</button>
-          </div>
-        </section>
-
-        <section class="box">
-          <div class="box-title">bot sponsors</div>
-          <div class="box-body ad-stack">
-            <button class="ad-unit market-ad" type="button" data-ad>
-              <span class="ad-pixel ticker"></span>
-              NYSE signal arcade
-              <small>quotes simulated</small>
-            </button>
-            <button class="ad-unit alert-ad" type="button" data-ad>
-              <span class="ad-pixel warning"></span>
-              Risk limit alert pack
-              <small>blinks responsibly</small>
-            </button>
-          </div>
-        </section>
-      </aside>
-
-      <main class="content" id="main">
-        <section class="hero home-hero" aria-labelledby="page-title">
-          <div class="hero-grid"></div>
-          <div class="hero-art"></div>
-          <div class="hero-copy">
-            <span class="hero-kicker">best viewed in 800x600, still works on phones</span>
-            <h1 id="page-title">Irie Trading Bot</h1>
-            <p>A retro operator manual for a modular automated trading system: strategies, signal resolution, risk, execution, dashboards, alerts, testing, and deployment.</p>
-            <div class="hero-buttons">
-              <a class="button" href="architecture.html">Architecture</a>
-              <a class="button" href="strategies.html">Strategies</a>
-              <a class="button" href="risk-management.html">Risk</a>
-              <a class="button" href="deployment.html">Deployment</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="section-window" aria-labelledby="snapshot-title">
-          <div class="window-title"><span id="snapshot-title">system snapshot</span><span>ONLINE</span></div>
-          <div class="intro-grid">
-            <div class="stat-box"><strong>10</strong> documentation portals with full breakdown pages.</div>
-            <div class="stat-box"><strong>2</strong> cable-TV and pale portal directory.</div>
-            <div class="stat-box"><strong>0</strong>  ads</div>
-          </div>
-        </section>
-
-        <section class="section-window" aria-labelledby="cards-title">
-          <div class="window-title"><span id="cards-title">bot modules</span><span>click cards to expand</span></div>
-          <div class="card-grid">
-            <article class="retro-card" id="architecture">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="architecture"><img src="images/IBM_System360_Model_30.jpg" alt="Vintage IBM System/360 computer installation" loading="lazy" /><span class="image-badge">mainframe map</span></span>
-                <span class="card-label"><strong>Modular Architecture</strong><span>Config, data, strategies, live engine, execution, risk, monitoring, and backtest modules.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The bot is arranged as independent services connected by clear contracts, so each layer can be swapped, tested, or extended without rewriting the whole system.</p>
-                <div class="card-actions"><a class="button" href="architecture.html">open architecture page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="strategies">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="strategies"><img src="images/Bloomberg_Terminal_Museum.jpg" alt="Bloomberg terminal with market screens and keyboard" loading="lazy" /><span class="image-badge">strategy screen</span></span>
-                <span class="card-label"><strong>Multi-Strategy Engine</strong><span>Trend following, mean reversion, and planned breakout logic share one signal language.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>Strategies calculate their own indicators and return normalized signals, allowing the resolver to decide how the portfolio should act.</p>
-                <div class="card-actions"><a class="button" href="strategies.html">open strategies page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="signal-resolver">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="signal-resolver"><img src="images/Bloomberg_terminal_keyboard.jpg" alt="Early 2000s Bloomberg terminal keyboard" loading="lazy" /><span class="image-badge">signal keys</span></span>
-                <span class="card-label"><strong>Signal Resolver</strong><span>Merges competing strategy votes and blocks unsafe position transitions.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The resolver prevents duplicate entries, closes before reversing, and avoids naked shorting by respecting current holdings before issuing orders.</p>
-                <div class="card-actions"><a class="button" href="signal-resolver.html">open resolver page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="risk-management">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="risk-management"><img src="images/Chicago.Mercantile.Exchange.jpg" alt="Chicago Mercantile Exchange buildings at dusk" loading="lazy" /><span class="image-badge">risk tower</span></span>
-                <span class="card-label"><strong>Risk Management</strong><span>Kelly sizing, portfolio heat, exposure limits, daily loss guards, drawdown controls, and ATR stops.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>Risk is treated as the operating system: every trade must pass position sizing, exposure, loss-limit, and stop-placement checks.</p>
-                <div class="card-actions"><a class="button" href="risk-management.html">open risk page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="data-pipeline">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="data-pipeline"><img src="images/DM_IBM_S360.jpg" alt="IBM System/360 computer and operator console" loading="lazy" /><span class="image-badge">data room</span></span>
-                <span class="card-label"><strong>Data Pipeline</strong><span>Fetching, caching, rate limiting, and provider abstraction for new data sources.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The pipeline fetches market bars, caches reusable data, protects provider limits, and keeps the rest of the bot independent from source-specific quirks.</p>
-                <div class="card-actions"><a class="button" href="data-pipeline.html">open data page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="execution">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="execution"><img src="images/Bloomberg_terminal_keyboard.jpg" alt="Financial terminal keyboard used for trading commands" loading="lazy" /><span class="image-badge">order keys</span></span>
-                <span class="card-label"><strong>Execution</strong><span>IBKR integration, paper/live modes, market orders, bracket orders, and broker adapters.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The execution layer translates approved portfolio intent into broker-ready orders while preserving a paper-mode safety lane.</p>
-                <div class="card-actions"><a class="button" href="execution.html">open execution page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="notifications">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="notifications"><img src="images/Motorolaradiobeeper.jpg" alt="Vintage Motorola radio pager" loading="lazy" /><span class="image-badge">pager ping</span></span>
-                <span class="card-label"><strong>Notifications</strong><span>Discord webhooks and Telegram bots for trade, error, and status updates.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>Alerts keep the operator informed when trades fire, safeguards trip, connectivity changes, or background services need attention.</p>
-                <div class="card-actions"><a class="button" href="notifications.html">open alerts page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="backtesting">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="backtesting"><img src="images/360-91-panel.jpg" alt="IBM System/360 Model 91 operator panel" loading="lazy" /><span class="image-badge">history lab</span></span>
-                <span class="card-label"><strong>Backtesting</strong><span>Historical validation, performance metrics, and a path toward multi-strategy simulation.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The backtesting engine measures strategy behavior before live deployment, highlighting returns, drawdown, win rate, Sharpe, and trade quality.</p>
-                <div class="card-actions"><a class="button" href="backtesting.html">open backtesting page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="dashboard">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="dashboard"><img src="images/Bloomberg_Terminal_Museum.jpg" alt="Bloomberg terminal dashboard screens" loading="lazy" /><span class="image-badge">live console</span></span>
-                <span class="card-label"><strong>FastAPI Dashboard</strong><span>Local browser views for positions, equity, health, signals, and live bot state.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>The dashboard exposes operational endpoints and human-readable views for monitoring the bot without tailing logs all day.</p>
-                <div class="card-actions"><a class="button" href="dashboard.html">open dashboard page</a></div>
-              </div>
-            </article>
-
-            <article class="retro-card" id="deployment">
-              <button class="card-trigger" type="button" data-card-toggle aria-expanded="false">
-                <span class="card-image" data-art="deployment"><img src="images/IBM360-65-1.corestore.jpg" alt="IBM System/360 Model 65 operator console" loading="lazy" /><span class="image-badge">server rack</span></span>
-                <span class="card-label"><strong>Deployment</strong><span>Oracle Cloud VPS, Docker, systemd, secrets, networking, and server hardening.</span></span>
-              </button>
-              <div class="card-detail">
-                <p>Deployment turns the bot into a managed service with predictable startup, logs, environment files, firewall rules, and recovery behavior.</p>
-                <div class="card-actions"><a class="button" href="deployment.html">open deployment page</a></div>
-              </div>
-            </article>
-          </div>
-        </section>
-      </main>
-
-      <aside class="right-rail" aria-label="ads and project links">
-        <section class="box">
-          <div class="box-title">finance bot ads</div>
-          <div class="box-body ad-stack">
-            <button class="ad-unit market-ad" type="button" data-ad>
-              <span class="ad-pixel ticker"></span>
-              Signal blender 3000
-              <small>BUY SELL HOLD</small>
-            </button>
-            <button class="ad-unit bot-ad" type="button" data-ad>
-              <span class="ad-pixel robot"></span>
-              Paper trading cafe
-              <small>latte not included</small>
-            </button>
-            <button class="ad-unit alert-ad" type="button" data-ad>
-              <span class="ad-pixel warning"></span>
-              ATR stop-o-matic
-              <small>demo only</small>
-            </button>
-          </div>
-        </section>
-
-        <section class="box">
-          <div class="box-title">project links</div>
-          <div class="box-body social-grid">
-            <a href="https://github.com/Native-254/trading-bot" target="_blank" rel="noreferrer">GitHub project</a>
-            <a href="https://www.linkedin.com/in/munene-howell-146163202/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://x.com/howie2541" target="_blank" rel="noreferrer">X / Twitter</a>
-          </div>
-        </section>
-
-        <section class="box">
-          <div class="box-title">site search</div>
-          <div class="box-body">
-            <form class="site-search" data-site-search>
-              <label for="site-search">Search for:</label>
-              <input id="site-search" type="search" value="risk manager" autocomplete="off" />
-              <button class="plain-button" type="submit">Yahoo-style Search</button>
-              <div class="search-results" data-search-results aria-live="polite"></div>
-            </form>
-          </div>
-        </section>
-
-        <section class="box">
-          <div class="box-title">local directory</div>
-          <div class="box-body directory-grid">
-            <a href="architecture.html">Architecture</a>
-            <a href="strategies.html">Strategies</a>
-            <a href="signal-resolver.html">Resolver</a>
-            <a href="risk-management.html">Risk</a>
-            <a href="data-pipeline.html">Data</a>
-            <a href="execution.html">Execution</a>
-            <a href="notifications.html">Alerts</a>
-            <a href="backtesting.html">Backtests</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="deployment.html">Deploy</a>
-          </div>
-        </section>
-      </aside>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow mono">// NYSE · IBKR PAPER ACCOUNT · STATUS: LIVE-LIKE</p>
+    <h1 class="hero-title glitch" data-text="NO EMOTIONS.&#10;NO OVERRIDES.&#10;NO EXCUSES.">NO EMOTIONS.<br>NO OVERRIDES.<br>NO EXCUSES.</h1>
+    <p class="hero-sub">IrieTrade is a fully automated, risk-managed trading bot built from scratch in Python. It reads the tape, sizes every position by the book, and never once asks how it <em>feels</em> about a trade.</p>
+    <div class="hero-actions">
+      <a href="#machine" class="btn btn-primary">See how it works</a>
+      <a href="#rulebook" class="btn btn-ghost">Read the rulebook</a>
     </div>
-
-    <footer class="footer">
-      <div class="footer-icons" aria-label="retro footer badges">
-        <a class="footer-icon" href="index.html">HOME</a>
-        <a class="footer-icon" href="architecture.html">SYS MAP</a>
-        <a class="footer-icon" href="risk-management.html">RISK</a>
-        <a class="footer-icon" href="dashboard.html">LIVE</a>
-        <a class="footer-icon" href="deployment.html">VPS</a>
-      </div>
-      <a href="index.html">home</a> |
-      <a href="architecture.html">architecture</a> |
-      <a href="strategies.html">strategies</a> |
-      <a href="deployment.html">deployment</a>
-      <br />
-      Irie Trading Bot retro documentation. Best viewed anywhere now.
-      <br />
-      visitor count: <span class="counter" data-counter>000128</span>
-    </footer>
   </div>
 
-  <script src="site.js"></script>
+  <div class="terminal-window" role="img" aria-label="Terminal boot sequence showing IrieTrade initializing">
+    <div class="terminal-bar">
+      <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+      <span class="terminal-title mono">irie_trade — engine.py</span>
+    </div>
+    <pre class="terminal-body mono" id="terminalBody"></pre>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</section>
+
+<!-- MACHINE / ARCHITECTURE -->
+<section class="section paper" id="machine">
+  <div class="torn-edge torn-top" aria-hidden="true"></div>
+  <div class="section-inner grid-2">
+    <div class="section-copy">
+      <p class="eyebrow mono ink">01 / THE MACHINE</p>
+      <h2 class="section-title">Built from scratch. Runs like a headless VPS ghost.</h2>
+      <p class="section-lead">No black-box SaaS, no drag-and-drop bot builder. Every module — data pipeline, signal resolver, broker layer, risk manager — is hand-written Python, wired together with dependency injection so any piece can be swapped or unit-tested on its own.</p>
+      <ul class="feature-list">
+        <li><strong>Signal resolver</strong> — merges every strategy's output and only ever proposes actions consistent with what you actually hold. No accidental naked shorts.</li>
+        <li><strong>Broker abstraction</strong> — Interactive Brokers via <code>ib_async</code> today, with Binance, OKX and more behind the same interface.</li>
+        <li><strong>Realistic paper simulation</strong> — slippage, commissions, partial fills and short-availability checks, so the paper account behaves like a live one.</li>
+        <li><strong>Position sync</strong> — internal state reconciled against IBKR's reported positions on every single iteration.</li>
+      </ul>
+    </div>
+    <div class="section-visual">
+      <div class="polaroid rotate-neg">
+        <img src="images/crt-monitor.png" alt="Vintage CRT monitor terminal, representing IrieTrade's headless engine" loading="lazy">
+        <span class="tape tape-tl"></span>
+        <span class="tape tape-br"></span>
+        <p class="polaroid-cap mono">fig. 01 — the brain, before the cloud had one</p>
+      </div>
+    </div>
+  </div>
+  <div class="torn-edge torn-bottom" aria-hidden="true"></div>
+</section>
+
+<!-- STRATEGY -->
+<section class="section black" id="strategy">
+  <div class="section-inner">
+    <p class="eyebrow mono">02 / HOW IT THINKS</p>
+    <h2 class="section-title light">Two strategies. One resolver. Zero double-guessing.</h2>
+    <p class="section-lead light-lead">Every strategy votes. The resolver only ever acts on votes that make sense given what the book is already holding — a Breakout module (Donchian channels) is next on the roadmap.</p>
+
+    <div class="strategy-grid">
+      <article class="strategy-card">
+        <p class="mono strategy-tag">strategies/trend_following_ls.py</p>
+        <h3>Trend-Following <span class="ls">L/S</span></h3>
+        <p>Long when the 50-SMA clears the 200-SMA and RSI dips under 30. Short the mirror image — 50 below 200, RSI over 70. Bracket orders on both sides, no naked exposure.</p>
+        <div class="code-strip mono">
+          <span>IF sma50 &gt; sma200 AND rsi &lt; 30 → ENTER_LONG</span>
+          <span>IF sma50 &lt; sma200 AND rsi &gt; 70 → ENTER_SHORT</span>
+        </div>
+      </article>
+      <article class="strategy-card">
+        <p class="mono strategy-tag">strategies/mean_reversion.py</p>
+        <h3>Mean-Reversion</h3>
+        <p>Bollinger Bands paired with RSI. Buys the fear when price snaps below the lower band with RSI under 30, exits the euphoria above the upper band with RSI over 70.</p>
+        <div class="code-strip mono">
+          <span>IF price &lt; lower_bb AND rsi &lt; 30 → ENTER_LONG</span>
+          <span>IF price &gt; upper_bb AND rsi &gt; 70 → EXIT_LONG</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="strategy-footnote mono">Backtested with vectorbt. New strategies must clear the same 5-year backtest before they ever touch paper capital — see Rulebook §5.</p>
+  </div>
+</section>
+
+<!-- RISK MANAGEMENT -->
+<section class="section paper" id="risk">
+  <div class="torn-edge torn-top" aria-hidden="true"></div>
+  <div class="section-inner">
+    <p class="eyebrow mono ink">03 / BUILT-IN RESTRAINT</p>
+    <h2 class="section-title">The bot is only as smart as the limits it can't override.</h2>
+    <p class="section-lead">Every rule below runs automatically, before a single order reaches Interactive Brokers. None of it is a suggestion.</p>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-icon"><img src="images/magnifying-glass.png" alt="Magnifying glass icon, representing verification checks" loading="lazy"></div>
+        <h3>Checked before it's sent</h3>
+        <p>Short-availability checks confirm shares actually exist to borrow. Position sync reconciles internal state against IBKR every iteration. An earnings blackout filter blocks new entries near a print.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon"><img src="images/shield-cross.png" alt="Red protective cross icon, representing stop-loss and drawdown protection" loading="lazy"></div>
+        <h3>Protected on the way down</h3>
+        <p>ATR-based stops on every position. Trailing stops tighten as a trade works. Drawdown past 15% halves size automatically; past 20% halts trading outright for a re-evaluation.</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-icon"><img src="images/cash.png" alt="Fanned stack of cash, representing capital and exposure limits" loading="lazy"></div>
+        <h3>Sized like it's real money</h3>
+        <p>Half-Kelly position sizing off recent win/loss history, capped at 5% of equity per trade. Portfolio heat capped at 30%. Gross exposure capped at a safe multiple of equity. Daily loss limit: -5%.</p>
+      </div>
+    </div>
+  </div>
+  <div class="torn-edge torn-bottom" aria-hidden="true"></div>
+</section>
+
+<!-- RULEBOOK -->
+<section class="section paper-dark" id="rulebook">
+  <div class="section-inner grid-2 reverse">
+    <div class="section-visual">
+      <div class="polaroid rotate-pos">
+        <img src="images/books.png" alt="A stack of well-worn books, representing IrieTrade's written governance rules" loading="lazy">
+        <span class="tape tape-tl"></span>
+        <span class="tape tape-br"></span>
+        <p class="polaroid-cap mono">fig. 02 — RULES.md, printed and dog-eared</p>
+      </div>
+    </div>
+    <div class="section-copy">
+      <p class="eyebrow mono ink">04 / THE RULEBOOK</p>
+      <h2 class="section-title">Governance, not vibes.</h2>
+      <p class="section-lead">Seven standing rules keep the strategy honest before it ever sees live capital. They're enforced on a calendar, not on a mood.</p>
+      <ol class="rule-list">
+        <li><strong>Minimum sample size.</strong> No edge is real before 50 closed trades and 12 months of live-like paper data.</li>
+        <li><strong>Max drawdown.</strong> 15% drawdown halves size. 20% halts trading for re-evaluation.</li>
+        <li><strong>Daily loss limit.</strong> Trading stops for the day at -5% equity, enforced by the risk manager itself.</li>
+        <li><strong>Review cadence.</strong> Weekly Sharpe &amp; exposure review, monthly robustness backtests, quarterly paper-vs-backtest audit.</li>
+        <li><strong>Strategy changes.</strong> Any parameter change needs a 5-year backtest before it's allowed near paper capital.</li>
+        <li><strong>Emotional discipline.</strong> No manual overrides. No sizing up on euphoria, no sizing down on fear.</li>
+        <li><strong>Go-live criteria.</strong> 12 months live-like, Sharpe &gt; 0.5, max drawdown &lt; 15%, win rate within one σ of backtest.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTS -->
+<section class="section black" id="alerts">
+  <div class="section-inner grid-2">
+    <div class="section-copy">
+      <p class="eyebrow mono">05 / SIGNAL RECEIVED</p>
+      <h2 class="section-title light">It doesn't trade quietly.</h2>
+      <p class="section-lead light-lead">Every fill, every error, every risk-limit trip gets pushed out in real time — across three independent channels, so a dead webhook never means a blind spot.</p>
+      <div class="alert-channels">
+        <div class="alert-channel">
+          <p class="mono chan-tag">01</p>
+          <h4>Discord</h4>
+          <p>Rich embeds — symbol, action, quantity, price — plus dedicated error alerts, delivered via webhook.</p>
+        </div>
+        <div class="alert-channel">
+          <p class="mono chan-tag">02</p>
+          <h4>Telegram</h4>
+          <p>Plain-text trade alerts through a bot token and chat ID, for the moments Discord isn't in reach.</p>
+        </div>
+        <div class="alert-channel">
+          <p class="mono chan-tag">03</p>
+          <h4>Email</h4>
+          <p>Brevo API as primary transport, Gmail SMTP as fallback — critical errors always find an inbox.</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-visual">
+      <div class="ear-frame">
+        <img src="images/ear-halftone.png" alt="Halftone illustration of an ear catching lightning-bolt signals, representing real-time alerts" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="section paper" id="disclaimer">
+  <div class="torn-edge torn-top" aria-hidden="true"></div>
+  <div class="section-inner disclaimer-inner">
+    <div class="warn-icon">
+      <img src="images/warning-triangle.png" alt="Yellow warning triangle icon" loading="lazy">
+    </div>
+    <div>
+      <p class="eyebrow mono ink">READ BEFORE YOU TRADE</p>
+      <h2 class="section-title small">This is an educational project. Treat it like one.</h2>
+      <p class="section-lead">IrieTrade is for learning, not financial advice. Past performance never guarantees future results, paper P&amp;L isn't live P&amp;L, and the rulebook exists precisely because the strategy hasn't earned real capital yet — see Rule 1 and Rule 7. Test thoroughly. Trade at your own risk.</p>
+    </div>
+  </div>
+  <div class="torn-edge torn-bottom" aria-hidden="true"></div>
+</section>
+
+<!-- CONTACT -->
+<section class="section paper-dark" id="contact">
+  <div class="section-inner grid-2">
+    <div class="section-visual">
+      <div class="polaroid rotate-neg small-polaroid">
+        <img src="images/vintage-phone.png" alt="A vintage brick mobile phone, representing the contact section" loading="lazy">
+        <span class="tape tape-tl"></span>
+        <p class="polaroid-cap mono">fig. 03 — still faster than most support lines</p>
+      </div>
+    </div>
+    <div class="section-copy">
+      <p class="eyebrow mono ink">06 / GET IN TOUCH</p>
+      <h2 class="section-title">Found a bug? Got a strategy idea?</h2>
+      <p class="section-lead">The bot doesn't take feature requests, but its builder does. Every issue and idea helps this project grow.</p>
+      <div class="contact-actions">
+        <a href="https://github.com/Native-254/IrieTrade/issues" target="_blank" rel="noopener" class="btn btn-primary">Open an issue ↗</a>
+        <a href="https://github.com/Native-254/IrieTrade" target="_blank" rel="noopener" class="btn btn-ghost">View the repo ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="#top" class="logo footer-logo">
+      <span class="logo-badge">IT</span>
+      <span class="logo-word" data-text="IRIE">IRIE</span>
+    </a>
+    <p class="mono footer-note">Educational project. Paper trading only. MIT licensed.</p>
+    <nav class="footer-links mono">
+      <a href="#machine">Machine</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#risk">Risk</a>
+      <a href="#rulebook">Rulebook</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
